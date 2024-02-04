@@ -10,7 +10,11 @@ func Weekly(cfg config.Config, tpls []string) (page.Modules, error) {
 	modules := make(page.Modules, 0, 53)
 	year := cal.NewYear(cfg.WeekStart, cfg.Year)
 
-	for _, week := range year.Weeks {
+	for n, week := range year.Weeks {
+		wn := n + 1
+		if (wn != 3) {
+			continue
+		}
 		modules = append(modules, page.Module{
 			Cfg: cfg,
 			Tpl: tpls[0],

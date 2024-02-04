@@ -1,6 +1,8 @@
 package compose
 
 import (
+	"fmt"
+
 	"github.com/kudrykv/latex-yearly-planner/app/components/cal"
 	"github.com/kudrykv/latex-yearly-planner/app/components/page"
 	"github.com/kudrykv/latex-yearly-planner/app/config"
@@ -20,6 +22,11 @@ func DailyStuff(prefix, leaf string) func(cfg config.Config, tpls []string) (pag
 				for _, week := range month.Weeks {
 					for _, day := range week.Days {
 						if day.Time.IsZero() {
+							continue
+						}
+						_, wn := day.Time.ISOWeek()
+						fmt.Println(day.Time, wn)
+						if wn != 3 || month.Month != 1 {
 							continue
 						}
 

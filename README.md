@@ -24,10 +24,10 @@ The following was tested with [POP_OS 22.04.1 LTS](https://pop.system76.com/) un
 2. [LaTex](https://miktex.org/download) & [PDFLaTeX](https://www.latex-project.org/get/)
 3. From the project directory, run the following command after updating
  'PLANNER_YEAR' below. This should generate the PDF in the 'out' directory.
-<code>PLANNER_YEAR=2022 \
+<code>PLANNER_YEAR=2024 \
 PASSES=1 \
-CFG="cfg/base.yaml,cfg/template_breadcrumb.yaml,cfg/sn_a5x.breadcrumb.default.yaml" \
-NAME="sn_a5x.breadcrumb.default" \
+CFG="cfg/base.yaml,cfg/template_breadcrumb.yaml,cfg/rm2.breadcrumb.default.yaml" \
+NAME="rm2.breadcrumb.default.yaml" \
 ./single.sh</code> 
 
 [Source](https://github.com/kudrykv/latex-yearly-planner/discussions/34#discussioncomment-3128344)
@@ -47,6 +47,14 @@ Instead of installing the dependencies manually, this repository is defined as a
 1. [Install Nix](https://nixos.org/download.html)
 2. Build a planner pdf using `nix build`
 3. Or, if you want to develop the code, enter a shell with all the dependencies present using `nix develop`
-   
+
+### Alternative using GitHub Codespaces
+
+It is possible to run the program in GitHub Codespaces, with some flags.
+
+1. Choose to code this repository in a Codespace (learn more: [Quickstart for GitHub Codespaces](https://docs.github.com/en/codespaces/getting-started/quickstart))
+2. Build a planner pdf using `nix --extra-experimental-features nix-command --extra-experimental-features flakes build`
+3. Or, if you want to develop the code, enter a shell with all the dependencies present using `nix --extra-experimental-features nix-command --extra-experimental-features flakes develop`
+
 # Preview examples
 <img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/01_annual.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/02_quarter.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/03_month.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/04_week.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/05_day.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/06_day_notes.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/07_day_reflect.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/08_todos_index.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/09_todos_page.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/10_notes_index.png" width="419"><img src="https://github.com/kudrykv/latex-yearly-planner/blob/main/examples/pictures/sn_a5x.planner/11_notes_page.png" width="419">

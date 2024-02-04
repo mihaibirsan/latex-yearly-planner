@@ -1,3 +1,10 @@
 {
-  "image": "ghcr.io/zombiezen/codespaces-nix"
+  "image": "ghcr.io/zombiezen/codespaces-nix",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go"
+      ]
+    }
+  }
 }

@@ -15,7 +15,10 @@ func Quarterly(cfg config.Config, tpls []string) (page.Modules, error) {
 		header.NewTextItem("Notes").RefText("Notes Index"),
 	}
 
-	for _, quarter := range year.Quarters {
+	for n, quarter := range year.Quarters {
+		if n > 0 {
+			continue
+		}
 		modules = append(modules, page.Module{
 			Cfg: cfg,
 			Tpl: tpls[0],
